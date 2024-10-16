@@ -1,0 +1,14 @@
+require('crypto').randomBytes(128).toString('hex') //for token generation
+
+npm install -g @angular/cli //install angular cli
+
+<app-navbar *ngIf="isAdmin"></app-navbar>
+
+<!-- Client Sidebar (Only displayed for Clients) -->
+<app-sidebar *ngIf="!isAdmin"></app-sidebar>
+
+<!-- Main content area where routed components will be displayed -->
+<div class="content">
+  <router-outlet></router-outlet>
+  <!-- This is where the routed component will be injected -->
+</div> 
