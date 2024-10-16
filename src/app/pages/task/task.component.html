@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <app-sidenav></app-sidenav>
+  <head> </head>
+  <body>
+    <div>
+      <h2>Create Task</h2>
+      <div class="container">
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+          <div>
+            <label for="name">Task Name:</label>
+            <input type="text" id="name" formControlName="name" />
+          </div>
+
+          <div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" formControlName="startDate" />
+          </div>
+
+          <div>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" formControlName="endDate" />
+          </div>
+
+          <div>
+            <label for="duration">Duration (in days):</label>
+            <input type="number" id="duration" formControlName="duration" />
+          </div>
+
+          <div>
+            <label for="description">Description:</label>
+            <textarea id="description" formControlName="description"></textarea>
+          </div>
+
+          <div>
+            <label for="isUrgent">Is Urgent:</label>
+            <input type="checkbox" id="isUrgent" formControlName="isUrgent" />
+          </div>
+
+          <button type="submit" [disabled]="taskForm.invalid">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

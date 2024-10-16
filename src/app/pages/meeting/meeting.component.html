@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <app-sidenav></app-sidenav>
+  <head> </head>
+  <body>
+    <div>
+      <h2>Create Meeting</h2>
+      <div class="container">
+        <form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
+          <div>
+            <label for="title">Meeting Title:</label>
+            <input type="text" id="title" formControlName="title" />
+          </div>
+
+          <div>
+            <label for="time">Time:</label>
+            <input type="time" id="time" formControlName="time" />
+          </div>
+
+          <div>
+            <label for="endtime">End Time:</label>
+            <input type="time" id="endtime" formControlName="endtime" />
+          </div>
+
+          <div>
+            <label for="description">Description:</label>
+            <textarea id="description" formControlName="description"></textarea>
+          </div>
+
+          <div>
+            <label for="isUrgent">Is Urgent:</label>
+            <input type="checkbox" id="isUrgent" formControlName="isUrgent" />
+          </div>
+
+          <button type="submit" [disabled]="meetingForm.invalid">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

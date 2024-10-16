@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <app-sidenav></app-sidenav>
+  <body>
+    <div class="container card">
+      <div class="header">
+        <h1>Login to Your Account</h1>
+      </div>
+
+      <div class="input_area">
+        <input
+          type="text"
+          [(ngModel)]="loginObj.username"
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          [(ngModel)]="loginObj.password"
+          placeholder="Password"
+        />
+      </div>
+
+      <div class="actions">
+        <button type="button" (click)="onLogin()" value="Login">Login</button>
+        <p>
+          Don't have an account? <a href="#" class="Sign_up_link">Sign up</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

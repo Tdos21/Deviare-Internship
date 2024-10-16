@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <app-sidenav></app-sidenav>
+  <head> </head>
+  <body>
+    <div>
+      <h2>Create Project</h2>
+      <div class="container">
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+          <div>
+            <label for="name">Project Name:</label>
+            <input type="text" id="name" formControlName="name" />
+          </div>
+
+          <div>
+            <label for="duration">Duration:</label>
+            <input type="text" id="duration" formControlName="duration" />
+          </div>
+
+          <div>
+            <label for="startdate">Start Date:</label>
+            <input type="date" id="startdate" formControlName="startdate" />
+          </div>
+
+          <div>
+            <label for="enddate">End Date:</label>
+            <input type="date" id="enddate" formControlName="enddate" />
+          </div>
+
+          <div>
+            <label for="description">Description:</label>
+            <textarea id="description" formControlName="description"></textarea>
+          </div>
+
+          <button type="submit" [disabled]="projectForm.invalid">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
